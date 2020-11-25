@@ -1,9 +1,10 @@
 package com.echo.serenity.cache.caffeine;
 
-import com.echo.serenity.cache.caffeine.enums.CacheName;
-import com.github.benmanes.caffeine.cache.Cache;
-import com.github.benmanes.caffeine.cache.CacheLoader;
-import com.github.benmanes.caffeine.cache.Caffeine;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -16,10 +17,10 @@ import org.springframework.cache.support.SimpleCacheManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
+import com.echo.serenity.cache.caffeine.enums.CacheName;
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.CacheLoader;
+import com.github.benmanes.caffeine.cache.Caffeine;
 
 @SpringBootApplication
 @EnableCaching
@@ -34,6 +35,7 @@ public class CacheCaffeineApplication {
      * expireAfterAccess=[duration]: 最后一次写入或访问后经过固定时间过期
      * expireAfterWrite=[duration]: 最后一次写入后经过固定时间过期
      * refreshAfterWrite=[duration]: 创建缓存或者最近一次更新缓存后经过固定的时间间隔，刷新缓存
+     *                               Guava在并发场景下有「更新锁定」的特性，对于同一个Key，只让一个请求去源中读取数据，而其他请求阻塞等待结果
      * weakKeys: 打开key的弱引用
      * weakValues：打开value的弱引用
      * softValues：打开value的软引用
