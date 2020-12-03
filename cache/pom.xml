@@ -16,6 +16,7 @@
     <modules>
         <module>caffeine</module>
         <module>redis</module>
+        <module>kcache</module>
     </modules>
 
 </project>

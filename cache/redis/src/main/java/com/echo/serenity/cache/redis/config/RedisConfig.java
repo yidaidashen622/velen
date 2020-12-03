@@ -1,5 +1,8 @@
 package com.echo.serenity.cache.redis.config;
 
+import java.lang.reflect.Method;
+import java.util.Collection;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -15,9 +18,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
-
-import java.lang.reflect.Method;
-import java.util.Collection;
 
 @Configuration
 @ConditionalOnProperty(name = "xx.xx.xx", havingValue = "redis", matchIfMissing = true)
