@@ -67,6 +67,7 @@
     <modules>
         <module>cache</module>
         <module>spring-cloud</module>
+        <module>algorithm</module>
     </modules>
 
 </project>
