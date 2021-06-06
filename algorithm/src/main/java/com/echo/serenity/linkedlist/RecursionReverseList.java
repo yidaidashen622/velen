@@ -1,4 +1,4 @@
-package com.echo.serenity.structures;
+package com.echo.serenity.linkedlist;
 
 import java.util.Arrays;
 import java.util.List;
