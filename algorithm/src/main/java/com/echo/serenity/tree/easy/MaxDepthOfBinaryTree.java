@@ -1,4 +1,4 @@
-package com.echo.serenity.tree;
+package com.echo.serenity.tree.easy;
 
 public class MaxDepthOfBinaryTree {
 
