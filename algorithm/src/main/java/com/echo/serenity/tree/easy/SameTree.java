@@ -1,5 +1,7 @@
 package com.echo.serenity.tree.easy;
 
+import com.echo.serenity.tree.TreeNode;
+
 public class SameTree {
 
     public boolean isSameTree(TreeNode p, TreeNode q) {

@@ -1,6 +1,8 @@
 package com.echo.serenity.tree.easy;
 
 
+import com.echo.serenity.tree.TreeNode;
+
 import java.util.Stack;
 
 public class InvertBinaryTree {

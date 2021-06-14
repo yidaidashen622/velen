@@ -1,5 +1,7 @@
 package com.echo.serenity.tree.easy;
 
+import com.echo.serenity.tree.TreeNode;
+
 public class LowestCommonAncestorOfBinarySearchTree {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

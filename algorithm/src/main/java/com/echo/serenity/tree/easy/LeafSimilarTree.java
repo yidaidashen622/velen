@@ -1,5 +1,7 @@
 package com.echo.serenity.tree.easy;
 
+import com.echo.serenity.tree.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
 

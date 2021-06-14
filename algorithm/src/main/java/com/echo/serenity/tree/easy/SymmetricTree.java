@@ -1,5 +1,7 @@
 package com.echo.serenity.tree.easy;
 
+import com.echo.serenity.tree.TreeNode;
+
 public class SymmetricTree {
 
     public boolean isSymmetric(TreeNode root) {
