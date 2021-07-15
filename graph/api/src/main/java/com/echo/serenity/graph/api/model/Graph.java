@@ -1,5 +1,6 @@
 package com.echo.serenity.graph.api.model;
 
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -18,4 +19,6 @@ public interface Graph<V, E> {
     Edge<V, E> getEdge(String edgeId);
 
     Vertex<V, E> getVertex(String vertexId);
+
+    Iterable<Vertex<V, E>> query(String vertexId, List<String> tags);
 }

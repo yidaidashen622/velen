@@ -1,5 +1,6 @@
 package com.echo.serenity.graph.nebula.model;
 
+import java.util.List;
 import java.util.Properties;
 
 import org.slf4j.Logger;
@@ -59,6 +60,11 @@ public class NebulaGraph implements Graph<NebulaVertex, NebulaEdge> {
 
     @Override
     public Vertex<NebulaVertex, NebulaEdge> getVertex(String vertexId) {
+        return null;
+    }
+
+    @Override
+    public Iterable<Vertex<NebulaVertex, NebulaEdge>> query(String vertexId, List<String> tags) {
         return null;
     }
 
