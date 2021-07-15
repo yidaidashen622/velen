@@ -97,17 +97,18 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
 
     <modules>
-        <module>cache</module>
-        <module>spring-cloud</module>
         <module>algorithm</module>
         <module>akka</module>
+        <module>cache</module>
+        <module>graph</module>
+        <module>spring-cloud</module>
     </modules>
 
 </project>
