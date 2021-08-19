@@ -11,11 +11,19 @@
         <version>${revision}</version>
     </parent>
 
-    <artifactId>cache</artifactId>
+    <artifactId>http</artifactId>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.echo.serenity</groupId>
+                <artifactId>graph-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <modules>
-        <module>caffeine</module>
-        <module>redis</module>
+        <module>apache-client</module>
     </modules>
-
 </project>

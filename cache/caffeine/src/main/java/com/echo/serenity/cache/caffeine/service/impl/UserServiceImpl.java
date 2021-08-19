@@ -1,15 +1,20 @@
 package com.echo.serenity.cache.caffeine.service.impl;
 
-import com.echo.serenity.cache.caffeine.dao.UserDao;
-import com.echo.serenity.cache.caffeine.model.User;
-import com.echo.serenity.cache.caffeine.service.UserService;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.*;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.echo.serenity.cache.caffeine.dao.UserDao;
+import com.echo.serenity.cache.caffeine.model.User;
+import com.echo.serenity.cache.caffeine.service.UserService;
 
 @Service
 @CacheConfig(cacheNames = "userCache")
@@ -23,6 +28,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Cacheable(cacheNames = "userList")
     public List<User> queryAll() {
+
         return userDao.select();
     }
 
@@ -47,7 +53,7 @@ public class UserServiceImpl implements UserService {
     )
     //这类复杂的，如果是通用的话，可以封装为一个注解，比如@UserSaveCache
     //理论上id映射对象，name也映射对象，对象就重复了，能不能name映射id，然后再根据id找到对象呢？ 也就是二级索引的概念
-    public void addUserMoreCache(User user){
+    public void addUserMoreCache(User user) {
         userDao.insert(user);
     }
 
